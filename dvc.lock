@@ -24,15 +24,15 @@ stages:
         train.batch_size: 128
         train.dropout: 0.4
         train.hidden_units: 64
-        train.lr: 0.01
+        train.lr: 0.001
         train.num_epochs: 10
     outs:
     - path: output/model.h5
-      md5: cd7ece8d4055f34f739ecc2311162525
+      md5: 8e62f06860ee035e71a5a29429d51f3f
       size: 3680480
     - path: output/train_logs.csv
-      md5: dd652ba3acb26ef6177a115eec574b76
-      size: 427
+      md5: c7fdc4f0902ed9ecaeb29aaaa02a5256
+      size: 422
   evaluate:
     cmd: python src/evaluate.py
     deps:
@@ -40,15 +40,15 @@ stages:
       md5: 35353c71da0985eed8bb507bbc53bd91
       size: 54950285
     - path: output/model.h5
-      md5: cd7ece8d4055f34f739ecc2311162525
+      md5: 8e62f06860ee035e71a5a29429d51f3f
       size: 3680480
     - path: src/evaluate.py
       md5: 56af2219bbc7599971432616d8afdf13
       size: 1161
     outs:
     - path: output/metrics.json
-      md5: 6750b2b9f58e6461d2d5339047866d03
+      md5: d8835abe45060b61cf79424cd3ac12a7
       size: 60
     - path: output/predictions.json
-      md5: f8679566b538ea7f70112f0b644e77cf
+      md5: b7bbce92ad05257aa46d6f8cd7e5b9a8
       size: 310000
