@@ -17,8 +17,8 @@ stages:
       md5: 35353c71da0985eed8bb507bbc53bd91
       size: 54950285
     - path: src/train.py
-      md5: 1d62fd6979e170bff1c748dd0c419270
-      size: 2313
+      md5: b2b36c7878bfafa294bb9a963b97d115
+      size: 2521
     params:
       params.yaml:
         train.batch_size: 128
@@ -28,14 +28,14 @@ stages:
         train.num_epochs: 10
     outs:
     - path: output/model.h5
-      md5: 772d38ee8570fa1e8ba936c9fe8dff77
-      size: 637888
+      md5: 2b620d40e2b20aa30af6819f03b6e8c1
+      size: 3680480
     - path: output/train/train_accuracy.csv
-      md5: d30da7c46cd154e020b0dd4a126ea7bf
+      md5: c334aea5196b309308c13d9b7dac9264
       size: 225
     - path: output/train/train_loss.csv
-      md5: e589fe67347be853736c656dcd9311cf
-      size: 222
+      md5: 8b1e6c142f9add6c150b31dca88ca1c1
+      size: 224
   evaluate:
     cmd: python src/evaluate.py
     deps:
@@ -43,19 +43,19 @@ stages:
       md5: 35353c71da0985eed8bb507bbc53bd91
       size: 54950285
     - path: output/model.h5
-      md5: 772d38ee8570fa1e8ba936c9fe8dff77
-      size: 637888
+      md5: 2b620d40e2b20aa30af6819f03b6e8c1
+      size: 3680480
     - path: src/evaluate.py
-      md5: 7fe046d38f10e4206dc37de2d49ad395
-      size: 3243
+      md5: f1de572f6c093813c7344ab3e7c569e9
+      size: 3236
     outs:
     - path: output/metrics.json
-      md5: 0581f59d57a9b32ae15b8fe05cb23536
-      size: 60
+      md5: b74b504d2bc39de5fab5f62ec70d0c6b
+      size: 61
     - path: output/test/predictions.json
-      md5: 84e2525e2767d1386d7674fa82abea17
+      md5: 08222c48e58cbd81da022181bb2ee685
       size: 310000
     - path: output/test/samples_of_mispredicted_images/
-      md5: b0bc2784c29dd79f0cf37d4a963c5b97.dir
-      size: 173286
+      md5: e20ff2a5aa3ce0684a508c6f94ed9be2.dir
+      size: 171900
       nfiles: 10
