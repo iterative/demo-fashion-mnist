@@ -10,6 +10,8 @@ jobs:
         run: |
           cml ci  # complete repository setup for CML
           pip install -r requirements.txt
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Reproduce pipeline if any changes detected in dependencies
         run: dvc repro
       - name: CML report
