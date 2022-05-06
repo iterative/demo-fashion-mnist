@@ -24,7 +24,8 @@ jobs:
           dvc plots diff \
             --target output/predictions.json \
             --show-vega > vega.json
-          vl2png vega.json -s 1.5 | cml publish --md >> report.md
+          vl2png vega.json -s 1.5 > report.png
+          cml publish --md report.png >> report.md
           echo "## Metrics" >> report.md
           dvc metrics show --md >> report.md
           cml send-comment report.md
