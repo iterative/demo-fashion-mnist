@@ -22,7 +22,7 @@ jobs:
           echo "## Plots" > report.md
           echo "### Class confusions" >> report.md
           dvc plots diff \
-            --target output/predictions.json \
+            --target output/test/predictions.json \
             --show-vega > vega.json
           vl2png vega.json -s 1.5 > report.png
           cml publish --md report.png >> report.md
