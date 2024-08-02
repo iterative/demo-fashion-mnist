@@ -1,4 +1,4 @@
-Keras==2.4.3
+Keras==2.13.1
 tensorflow==2.5.1
 dvc
 matplotlib
