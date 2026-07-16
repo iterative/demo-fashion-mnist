@@ -46,3 +46,7 @@ stages:
         y: predicted
     - output/test/samples_of_mispredicted_images/:
         cache: false
+artifacts:
+  test:
+    path: test
+    type: model
